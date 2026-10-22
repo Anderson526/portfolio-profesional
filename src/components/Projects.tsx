@@ -9,11 +9,102 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { useKV } from '@github/spark/hooks'
 import { useLanguage } from '@/hooks/use-language'
 import { ProjectCard, Project as ProjectType } from './ProjectCard'
-import icontecWebsite from '@/img/projectsimg/icontecwebsite.png'
+import logoAc from '@/img/projectsimg/logo_ac.png'
+import icontecWebsite from '@/img/projectsimg/icontec_website.png'
 
 const SAMPLE_PROJECTS: ProjectType[] = [
   {
-    id: '1',
+    id: 'custom-admin',
+    title: 'Custom Admin & White Label',
+    description: 'White-label WordPress admin panel with role-based customizations and login branding.',
+    longDescription: 'Plugin para personalizar la experiencia del administrador de WordPress con marca blanca, branding del login, ocultación de menús por rol y ajustes visuales del panel. Diseñado para clientes que requieren un entorno más profesional, privado y orientado a su identidad corporativa.',
+    technologies: ['WordPress', 'PHP', 'CSS', 'jQuery', 'Admin UI', 'Security'],
+    githubUrl: 'https://github.com/Anderson526/custom-adminAC',
+    liveUrl: 'https://anderson526.github.io/portfolio-profesional/',
+    imageUrl: logoAc
+  },
+  {
+    id: 'cpt-builder',
+    title: 'Easy CPT & Taxonomy Builder',
+    description: 'Visual tool to create custom post types and taxonomies without writing custom code.',
+    longDescription: 'Sistema visual para crear Custom Post Types, taxonomías y configuraciones de contenido en WordPress sin depender de snippets manuales. Optimiza el desarrollo para sitios con estructuras complejas y facilita la administración para clientes no técnicos.',
+    technologies: ['WordPress', 'PHP', 'Custom Post Types', 'Taxonomies', 'Admin Panel', 'MySQL'],
+    githubUrl: 'https://github.com/Anderson526/cpt-builderAC',
+    liveUrl: 'https://anderson526.github.io/portfolio-profesional/',
+    imageUrl: logoAc
+  },
+  {
+    id: 'performance',
+    title: 'Smart Performance & Optimizer',
+    description: 'Performance plugin for lazy loading, script control and database cleanup.',
+    longDescription: 'Complemento de optimización para WordPress con lazy load de videos e iframes, control de scripts innecesarios y limpieza segura de la base de datos. Su objetivo es mejorar tiempos de carga y mantener el sitio más liviano sin afectar la experiencia del usuario.',
+    technologies: ['WordPress', 'PHP', 'JavaScript', 'Performance', 'Optimization', 'MySQL'],
+    githubUrl: 'https://github.com/Anderson526/wpPerformanceAC',
+    liveUrl: 'https://anderson526.github.io/portfolio-profesional/',
+    imageUrl: logoAc
+  },
+  {
+    id: 'security',
+    title: 'Core Security & Login Protector',
+    description: 'Security hardening plugin to protect login, hide access URLs and block brute-force attempts.',
+    longDescription: 'Plugin de seguridad para WordPress enfocado en endurecer la capa básica del sitio: ocultar el login, bloquear enumeración de usuarios, mitigar ataques de fuerza bruta y reforzar la protección del acceso administrativo con medidas sencillas y eficaces.',
+    technologies: ['WordPress', 'PHP', 'Security', 'Authentication', 'WordPress Hooks', 'Admin UI'],
+    githubUrl: 'https://github.com/Anderson526/wpSecurityAC',
+    liveUrl: 'https://anderson526.github.io/portfolio-profesional/',
+    imageUrl: logoAc
+  },
+  {
+    id: 'seo',
+    title: 'Simple SEO & Meta Manager',
+    description: 'SEO plugin for managing titles, meta descriptions and Open Graph tags from the editor.',
+    longDescription: 'Herramienta para gestionar SEO on-page en WordPress desde el editor de bloques: títulos SEO, meta descriptions, Open Graph y Twitter Cards. Permite controlar el posicionamiento básico y la vista previa de contenido sin añadir complejidad al flujo editorial.',
+    technologies: ['WordPress', 'PHP', 'Gutenberg', 'SEO', 'Open Graph', 'Metadata'],
+    githubUrl: 'https://github.com/Anderson526/WPsimpleSeoAC',
+    liveUrl: 'https://anderson526.github.io/portfolio-profesional/',
+    imageUrl: logoAc
+  },
+  {
+    id: 'smtp-mailer',
+    title: 'SMTP & Email Logger',
+    description: 'SMTP delivery and email logging tool for WordPress mail reliability and monitoring.',
+    longDescription: 'Plugin para enviar correos desde WordPress a través de SMTP y registrar cada envío para auditoría, diagnóstico y validación operativa. Permite controlar la entrega de notificaciones, errores y la reputación del dominio sin depender de configuraciones manuales complejas.',
+    technologies: ['WordPress', 'PHP', 'PHPMailer', 'SMTP', 'MySQL', 'Email Delivery'],
+    githubUrl: 'https://github.com/Anderson526/WPsmtpMailerAC',
+    liveUrl: 'https://anderson526.github.io/portfolio-profesional/',
+    imageUrl: logoAc
+  },
+  {
+    id: 'maintenance-mode',
+    title: 'Icontec Maintenance Mode',
+    description: 'Custom maintenance page with scheduling, roles and multilingual support.',
+    longDescription: 'Plugin para activar una página de mantenimiento personalizada con roles permitidos, programación por cron, soporte multilenguaje y personalización visual. Ideal para mantenimiento técnico, lanzamiento de sitios o cambios de infraestructura sin interrumpir la administración.',
+    technologies: ['WordPress', 'PHP', 'WP Cron', 'JavaScript', 'CSS', 'Multilanguage'],
+    githubUrl: 'https://github.com/Anderson526/MaintenceModeWordpress',
+    liveUrl: 'https://anderson526.github.io/portfolio-profesional/',
+    imageUrl: logoAc
+  },
+  {
+    id: 'role-manager',
+    title: 'Role Manager',
+    description: 'Modular role and permission manager for WordPress user access control.',
+    longDescription: 'Sistema modular para gestionar roles, usuarios, permisos por página y campos personalizados en WordPress. Permite controlar accesos con mayor precisión y mantener la seguridad del sitio organizado, escalable y fácil de administrar.',
+    technologies: ['WordPress', 'PHP', 'ACL', 'Roles', 'Permissions', 'User Management'],
+    githubUrl: 'https://github.com/Anderson526/RoleManagerWordpress',
+    liveUrl: 'https://anderson526.github.io/portfolio-profesional/',
+    imageUrl: logoAc
+  },
+  {
+    id: 'rest-api-toolkit',
+    title: 'REST API Toolkit',
+    description: 'WordPress and WooCommerce API toolkit with auth, validation, docs and rate limiting.',
+    longDescription: 'Kit de infraestructura REST para WordPress y WooCommerce con enrutamiento propio, autenticación, validación, rate limiting, logging, documentación OpenAPI y gestión de API keys. Diseñado para integrar servicios externos y crear soluciones con APIs más robustas y seguras.',
+    technologies: ['WordPress', 'PHP', 'REST API', 'WooCommerce', 'API Keys', 'OpenAPI'],
+    githubUrl: 'https://github.com/Anderson526/RESTAPIToolkit',
+    liveUrl: 'https://anderson526.github.io/portfolio-profesional/',
+    imageUrl: logoAc
+  },
+  {
+    id: 'E-Commerce',
     title: 'E-Commerce Platform for Icontec',
     description: 'A modern, full-featured online marketplace with real-time inventory and payment processing.',
     longDescription: 'Built a comprehensive e-commerce solution featuring real-time inventory management, secure payment processing with Stripe, advanced search and filtering, order tracking, and an admin dashboard. The platform handles thousands of concurrent users with optimized performance and caching strategies.',
